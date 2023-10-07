@@ -1,34 +1,56 @@
-﻿{
+﻿//Для настройки Интернет Информационных Сервисов (IIS) и профилей запуска в .NET сервисах
+{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
+    // аутентификации Windows, которая указывает, должен ли сервис использовать аутентификацию Windows. 
+    // Здесь установлено false, что означает, что аутентификация Windows отключена.
     "windowsAuthentication": false,
+    // устанавливает, должен ли сервис использовать анонимную аутентификацию. 
+    // Здесь установлено true, что означает, что анонимная аутентификация разрешена.
     "anonymousAuthentication": true,
+    // задается конфигурация для IIS Express
     "iisExpress": {
+      // устанавливает URL для сервиса при использовании IIS Express.
       "applicationUrl": "http://localhost:15355",
+      // указывает SSL порт, который будет использоваться IIS Express 
+      // для обработки защищенных соединений.
       "sslPort": 44303
     }
   },
   "profiles": {
     "http": {
+      // указывает, что проект должен быть запущен напрямую.
       "commandName": "Project",
+      // задает, должно ли приложение показывать сообщения от dotnet run
       "dotnetRunMessages": true,
+      // означает, что браузер должен быть автоматически запущен при старте приложения.
       "launchBrowser": true,
+      // указывает URL, который будет открыт в браузере при запуске приложения.
       "launchUrl": "swagger",
+      // задает URL, на котором будет запущено приложение.
       "applicationUrl": "http://localhost:5057",
+      //  указаны переменные окружения, которые будут использованы при запуске приложения.
       "environmentVariables": {
+        // В данном случае устанавливается "ASPNETCORE_ENVIRONMENT": "Development", что означает, 
+        // что приложение будет запущено в режиме разработки.
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    // Профиль "https" аналогичен профилю "http", но с учетом SSL/HTTPS:
     "https": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
+      // указывает, что приложение будет доступно и по HTTP, и по HTTPS соединению.
       "applicationUrl": "https://localhost:7212;http://localhost:5057",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    // Профиль "IIS Express" устанавливает параметры запуска для IIS Express. 
+    // Эти параметры очень похожи на описанные выше, но "commandName": 
+    // "IISExpress" указывает, что будет использоваться IIS Express вместо прямого запуска проекта.
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
